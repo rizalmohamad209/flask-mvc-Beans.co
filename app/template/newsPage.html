@@ -1,0 +1,143 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="py-1 bg-blueGray-50">
+  <h1 class="text-4xl text-center">Page News</h1>
+  <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mx-auto mt-24">
+    <div
+      class="
+        relative
+        flex flex-col
+        min-w-0
+        break-words
+        bg-white
+        w-full
+        mb-6
+        shadow-lg
+        rounded
+      "
+    >
+     
+
+      <div class="block w-full overflow-x-auto">
+        <table
+          class="items-center bg-transparent w-full border-collapse table-auto"
+        >
+          <thead>
+            <tr>
+              <th
+                class="
+                  px-6
+                  bg-blueGray-50
+                  text-blueGray-500
+                  align-middle
+                  border border-solid border-blueGray-100
+                  py-3
+                  text-xs
+                  uppercase
+                  border-l-0 border-r-0
+                  whitespace-nowrap
+                  font-semibold
+                  text-left
+                "
+              >
+                No
+              </th>
+              <th
+                class="
+                  px-6
+                  bg-blueGray-50
+                  text-blueGray-500
+                  align-middle
+                  border border-solid border-blueGray-100
+                  py-3
+                  text-xs
+                  uppercase
+                  border-l-0 border-r-0
+                  whitespace-nowrap
+                  font-semibold
+                  text-left
+                "
+              >
+                Title
+              </th>
+
+              <th
+                class="
+                  px-6
+                  bg-blueGray-50
+                  text-blueGray-500
+                  align-middle
+                  border border-solid border-blueGray-100
+                  py-3
+                  text-xs
+                  uppercase
+                  border-l-0 border-r-0
+                  whitespace-nowrap
+                  font-semibold
+                  text-left
+                "
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for no, x in data %}
+            <tr>
+              <th
+                class="
+                  border-t-0
+                  px-6
+                  align-middle
+                  border-l-0 border-r-0
+                  text-xs
+                  whitespace-nowrap
+                  p-4
+                  text-left text-blueGray-700
+                "
+              >
+                {{ no }}
+              </th>
+              <td
+                class="
+                  border-t-0
+                  px-6
+                  align-middle
+                  border-l-0 border-r-0
+                  text-xs
+                  whitespace-nowrap
+                  p-4
+                "
+              >
+                {{ x.title }}
+              </td>
+              <td
+                class="
+                  border-t-0
+                  px-6
+                  align-middle
+                  border-l-0 border-r-0
+                  text-xs
+                  whitespace-nowrap
+                  p-4
+                "
+              >
+                <a href="updatenews/{{ x.id }}">Update</a> |
+                <a href="delete/{{ x.id }}">Delete</a>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <a
+      href="{{ url_for('createNews') }}"
+      class="bg-blue-700 px-10 py-3 text-white text-center rounded-lg "
+      >Create</a
+    >
+  </div>
+</section>
+
+{% endblock %}

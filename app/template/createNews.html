@@ -1,0 +1,26 @@
+{%extends 'base.html'%} {%block content%}
+
+<section>
+  <div class="h-screen bg-gray-200 flex flex-wrap justify-center">
+      <h1 class="text-4xl text-center mt-10 "> Form create news</h1>
+    <div class="py-6 px-8 h-96  bg-white rounded shadow-xl w-10/12 ">
+      <form action="/newspage" method="post">
+        <div class="mb-6">
+          <label for="title" class="block text-gray-800 font-bold">Title</label>
+          <input type="text" name="title" id="title" placeholder="Masukan title berita" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+        </div>
+
+        <div class="mb-6">
+          <label for="konten" class="block text-gray-800 font-bold">Konten</label>
+          <input type="text" name="konten" id="konten" placeholder="Masukan isi konten" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+        </div>
+         <div class="mb-6">
+          <label for="imaage" class="block text-gray-800 font-bold">Image</label>
+          <input type="text" name="imaage" id="imaage" placeholder="Masukan link image" class="w-full border border-gray-300 py-2 pl-3 rounded mt-2 outline-none focus:ring-indigo-600 :ring-indigo-600" />
+      <button type="submit" class="cursor-pointer py-2 px-4 block mt-6 bg-indigo-500 text-white font-bold w-full text-center rounded">Tambah</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+{%endblock%}
