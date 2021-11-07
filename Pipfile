@@ -9,6 +9,7 @@ flask-sqlalchemy = "*"
 flask-assets = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
